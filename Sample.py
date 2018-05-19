@@ -1,8 +1,9 @@
-# Python-Vector-CANoe
+# -*- coding: UTF-8 -*-
+#.Data:2018/5/19
 
-Control Vector CANoe API by Python
+import CANoe
+import time
 
-Usage:
 app = CANoe.CANoe() #定义CANoe为app
 
 app.open_simulation("test.cfg") #导入某个CANoe congif
