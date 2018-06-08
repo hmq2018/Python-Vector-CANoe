@@ -2,6 +2,10 @@
 
 Control Vector CANoe API by Python
 
+Install:
+
+pip install Python-CANoe
+
 
 
 Usage:
