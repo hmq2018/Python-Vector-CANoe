@@ -137,6 +137,7 @@ class CANoe:
             sys_namespace = systemCAN(ns_name)
             sys_value = sys_namespace.Variables(sysvar_name)
             sys_value.Value = var
+            time.sleep(1)       # 等待1秒钟，以防止连续系统变量赋值情况下导致赋值失败的情况
             # print(sys_value)
             # result = sys_value(sys_name)
             #
