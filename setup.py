@@ -11,6 +11,6 @@ setup(name='Python_Vector_CANoe',
       license='MIT',
       packages=['Python_Vector_CANoe'],
       install_requires=[
-          'pywin32==221',
+          'pywin32==301',
       ],
       zip_safe=False)
