@@ -119,6 +119,26 @@ class CANoe:
             return result.Value
         else:
             raise RuntimeError("CANoe is not open,unable to GetVariable")
+            
+    def set_SigVal(self, channel_num, msg_name, sig_name, bus_type="CAN", value):
+        """
+        @summary Get the value of a raw CAN signal on the CAN simulation bus
+        @param channel_num - Integer value to indicate from which channel we will read the signal, usually start from 1,
+                             Check with CANoe can channel setup.
+        @param msg_name - String value that indicate the message name to which the signal belong. Check DBC setup.
+        @param sig_name - String value of the signal to be read
+        @param value - set the CAN signal value
+        @param bus_type - String value of the bus type - e.g. "CAN", "LIN" and etc.
+        @return The CAN signal value in floating point value.
+                Even if the signal is of integer type, we will still return by
+                floating point value.
+        @exception None
+        """
+        if (self.application != None):
+            result = self.application.GetBus(bus_type).GetSignal(channel_num, msg_name, sig_name)
+            result.Value = value
+        else:
+            raise RuntimeError("CANoe is not open,unable to GetVariable")
 
     def get_SysVar(self, ns_name, sysvar_name):
 
